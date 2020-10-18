@@ -8,10 +8,18 @@
       <!-- 表单区域 -->
       <el-form ref="loginFormRef" class="form" :model="loginForm" :rules="loginFormRules">
         <el-form-item prop="username">
-          <el-input v-model="loginForm.username" prefix-icon="iconfont icon-user"></el-input>
+          <el-input
+            v-model="loginForm.username"
+            placeholder="请输入登录用户名称"
+            prefix-icon="iconfont icon-user"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="password">
-          <el-input v-model="loginForm.password" prefix-icon="iconfont icon-password"></el-input>
+          <el-input
+            v-model="loginForm.password"
+            placeholder="请输入登录密码"
+            prefix-icon="iconfont icon-password"
+          ></el-input>
         </el-form-item>
         <el-form-item class="btn-wrap">
           <el-button type="primary" @click="login">确定</el-button>
@@ -32,7 +40,7 @@ export default {
       },
       loginFormRules: {
         username: [
-          { required: true, message: '请输入登录名', trigger: 'blur' },
+          { required: true, message: '请输入登录用户名称', trigger: 'blur' },
           { min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' }
         ],
         password: [
